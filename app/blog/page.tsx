@@ -122,16 +122,16 @@ const Body = ({ data, body }: { data: any; body: boolean }) => {
             {blog.map((x: any, index: any) => (
               <div
                 key={x.id}
-                className="w-[300px] h-[200px] bg-gradient-to-r from-gray-50 to-indigo-300 text-center shadow-xl flex flex-col justify-center items-center rounded-xl gap-3"
+                className="w-[300px] h-[200px] p-2  bg-gradient-to-r from-gray-50 to-indigo-300 text-center shadow-xl flex flex-col justify-center items-center rounded-xl gap-3"
               >
-                <h1 className="font-bold text-center">{x.title}</h1>
-                <p className="text-sm text-center">{x.body}</p>
+                <h1 className="font-bold text-center p-1 mt-2">{x.title}</h1>
+                <p className="text-sm text-center p-1">{x.body}</p>
               </div>
             ))}
           </div>
           <div className="w-full h-[50px] flex justify-center">
             <div className="w-[200px] h-[50px] flex justify-center items-center bg-red-300 rounded-xl shadow-xl hover:bg-red-800">
-              <button onClick={() =>setShow(true)}>Back</button>
+              <button onClick={() =>setShow(false)}>Back</button>
             </div>
           </div>
         </div>
