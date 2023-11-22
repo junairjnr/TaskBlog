@@ -19,8 +19,8 @@ export default function Blog() {
 
   if (!blog) return null;
   return (
-    <div className="w-full h-full ">
-      <div className="w-full h-full bg-gradient-to-r from-lime-50 to-indigo-100 flex flex-col justify-center items-center">
+    <div className="w-full  ">
+      <div className="w-full  bg-gradient-to-r from-lime-50 to-indigo-100 flex flex-col justify-center items-center">
         <div className="w-full h-screen flex flex-col justify-center items-center">
           <h1 className="text-6xl pt-16 font-bold font-serif text-slate-500">
             Just A look to Here.....!
@@ -50,13 +50,13 @@ export default function Blog() {
         </div>
 
         {showHead && !showBody && (
-          <div className="w-full h-screen bg-gradient-to-r from-sky-50 to-red-100">
+          <div className="w-full  bg-gradient-to-r from-sky-50 to-red-100">
             <Heads data={filteredTitle} show={showHead} />
           </div>
         )}
 
         {showBody && !showHead && (
-          <div className="w-full h-full justify-center items-center">
+          <div className="w-full justify-center items-center">
             <Body data={blog} body={showBody} />
           </div>
         )}
@@ -75,8 +75,8 @@ const Heads = ({ data, show }: { data: any; show: boolean }) => {
     <div className="w-full">
       {shows && (
         <div className="w-full flex  flex-col p-3">
-          <div className="w-full h-full flex flex-row">
-            <div className="w-full h-full flex flex-col">
+          <div className="w-full  flex flex-row">
+            <div className="w-full  flex flex-col">
               <p className="text-3xl font-bold text-center text-slate-600">
                 This is A small Blog.....!
               </p>
@@ -90,9 +90,9 @@ const Heads = ({ data, show }: { data: any; show: boolean }) => {
               </Link>
             </div>
           </div>
-          <div className="w-full h-full justify-center items-center grid grid-cols-4 gap-10 pt-5 p-2">
+          <div className="w-full  justify-center items-center grid grid-cols-4 gap-10 pt-5 p-2">
             {title.map((x: any) => (
-              <div className=" w-[300px] h-[150px]  bg-gradient-to-r from-sky-50 to-cyan-300 flex items-center justify-center">
+              <div key={x.id} className=" w-[300px] h-[150px]  bg-gradient-to-r from-sky-50 to-cyan-300 flex items-center justify-center">
                 <p className="text-xl font-semibold text-center text-gray-600">
                   {x.title}
                 </p>
@@ -112,7 +112,7 @@ const Body = ({ data, body }: { data: any; body: boolean }) => {
   return (
     <>
       {show && (
-        <div className="w-full h-full p-5">
+        <div className="w-full p-5">
           <div className="w-full flex justify-center items-center p-7">
             <p className="text-5xl font-bold font-serif">
               Here You can Read.....!
@@ -131,7 +131,7 @@ const Body = ({ data, body }: { data: any; body: boolean }) => {
           </div>
           <div className="w-full h-[50px] flex justify-center">
             <div className="w-[200px] h-[50px] flex justify-center items-center bg-red-300 rounded-xl shadow-xl hover:bg-red-800">
-              <button onClick={() =>setShow(false)}>Back</button>
+              <button onClick={() =>setShow(true)}>Back</button>
             </div>
           </div>
         </div>
